@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    overflow: hidden;
+    font-family: 'Courier New', monospace;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.clock-container {
+    text-align: center;
+    z-index: 2;
+}
+
+.clock {
+    font-size: 80px;
+    letter-spacing: 8px;
+    color: cyan;
+    text-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 40px #00ffff;
+    animation: pulse 2s infinite ease-in-out;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        text-shadow: 0 0 10px cyan, 0 0 20px cyan;
+    }
+    50% {
+        text-shadow: 0 0 25px cyan, 0 0 50px #00ffff;
+    }
+}
+
+button {
+    margin-top: 30px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    background: rgba(0, 255, 255, 0.2);
+    color: white;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: rgba(0, 255, 255, 0.5);
+    transform: scale(1.1);
+}
